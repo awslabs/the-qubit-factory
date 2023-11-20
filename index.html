@@ -286,6 +286,16 @@
   <path d="m12.96732 50.59006 23.41607-15.75201 16.81513-22.66472z" opacity=".243"/>
 </svg>
 
+<div id="popmovableWindow" style="display:none" class="popwindow">
+  <button id="closeWindowBtn" class="close-btn">X</button>
+  <div class="popwindow-header">&nbsp Research Notes [employee #000ADM]</div>
+  <div class="popwindow-text">Test content Test content Test content Test content Test content <br>
+     Test content Test content Test content Test content Test content Test content</div>
+  <div id="rightResizeHandle" class="right-resize-handle"></div>
+  <div id="bottomResizeHandle" class="bottom-resize-handle"></div>
+  <div id="resizeHandle" class="resize-handle"></div>
+</div>
+
     <canvas class="canvas" id="canvasInterface" style="z-index:35"> </canvas>
     <canvas class="canvas" id="canvasDebug" style="z-index:34"> </canvas>
     <canvas class="canvas" id="canvasFPS" style="z-index:34"> </canvas>
@@ -326,6 +336,7 @@
     <!--     #svganalysis=15 -->
     <canvas class="canvas" id="canvasScenarioMask" style="z-index:15"> </canvas>
     <canvas class="canvas" id="canvasArchive" style="z-index:14"> </canvas>
+    <canvas class="canvas" id="canvasJournal" style="z-index:14"> </canvas>
     <canvas class="canvas" id="canvasMenuEraser" style="z-index:13"> </canvas>
     <canvas class="canvas" id="canvasMenuText" style="z-index:11"> </canvas>
     <canvas class="canvas" id="canvasScenario" style="z-index:11"> </canvas>
@@ -355,7 +366,8 @@
     <!--     #backtexture=1 -->
     
     <script src="scripts.min.js"></script>
-    <!-- <script src="scripts/SpeechDump.js"></script>
+    <!-- <script src="scripts/PopWindow.js"></script>
+    <script src="scripts/SpeechDump.js"></script>
     <script src="scripts/Achievements.js"></script>
     <script src="scripts/LevelConsts.js"></script>
     <script src="scripts/LevelGates.js"></script>
@@ -424,6 +436,7 @@
     <script src="scripts/index.js"></script> -->
 
     <div id="greyoverlay"></div>
+
   </body>
 
 </html>

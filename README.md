@@ -139,5 +139,8 @@ _The Qubit Factory_ is intended to be accessible to users without prior knowledg
 **Where did you get the graphics for the game?**
 * Most of the graphics were made from scratch using SVG paths, but some of the background textures are from [SVGbackgrounds.com](https://www.svgbackgrounds.com/).
 
+## Disclaimer: 
+_The Qubit Factory_ is set within a fictional reality about robots doing robotty things in a robot factory. The character dialog contained within, written wholly by developer Glen Evenbly, is intended to be humorous and satirical. The opinions, views and practices of characters from within _The Qubit Factory_ do not reflect those of the developers or the developers' employer. 
+
 ## License:
 _The Qubit Factory_ is licensed under Apache 2.0.
