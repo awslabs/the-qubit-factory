@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png">
+
   </head>
 
   <body>
@@ -21,7 +22,7 @@
     <svg id="svgselect" style="display:none;"></svg>
     
     <!--     background texture for tutorials -->
-    <svg xmlns="http://www.w3.org/2000/svg" id="svgtutorial"  class="overtexture" style="display:none;"
+    <svg xmlns="http://www.w3.org/2000/svg" id="svgtutorial"  class="overtexture" style="display:none; z-index: 30;"
          width="20" height="10" viewBox="0 0 3000 1500">
       <defs>
         <pattern id="brick3" width='150' height='130' patternUnits='userSpaceOnUse'> 
@@ -41,11 +42,15 @@
         <g id="Page-1" fill="none" fill-rule="evenodd"><rect fill='#bbb' width='150' height='130'/>
           <g  fill='#bbb'><polygon  stroke='#ccc' stroke-width='5' stroke-miterlimit='10' points='112.5,0 37.5,0 0,65 37.5,130 112.5,130 150,65 '/></g></g>
       </pattern>
+      <pattern id="imgPattern" patternUnits="userSpaceOnUse" width="150" height="130">
+        <image href="images/granitetile80.png" x="0" y="0" width="150" height="150" />
+      </pattern>
     </defs>
     <rect width="100%" height="100%" fill="url(#brick2)"></rect>
+    <rect width="100%" height="100%" fill="url(#imgPattern)"></rect>
   </svg>
-    <!-- background by SVGBackgrounds.com -->
 
+    <!-- <g fill="none" fill-rule="evenodd"><rect fill='#b9b9b9' width='300' height='260'/> -->
     <svg xmlns="http://www.w3.org/2000/svg" id="svgboard"  class="backtexture" style="display:none;"
          width="50" height="50" viewBox="0 0 100 100">
       <defs>
@@ -84,7 +89,7 @@
     
 <!--     browser icons -->
     <svg id="fireicon" style="position: absolute; left: 0; top: 0; z-index: 27; display:none" width="77.42" height="79.97" version="1.1" viewBox="0 0 77.42 79.97" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
- <title>A puzzle game about quantum computing.</title>
+ <title>Firefox Browser logo</title>
  <defs>
   <linearGradient id="ax" x1="70.79" x2="6.447" y1="12.39" y2="74.47" gradientTransform="translate(-1.3 -.004086)" gradientUnits="userSpaceOnUse">
    <stop stop-color="#fff44f" offset=".048"/>
@@ -296,24 +301,26 @@
   <div id="resizeHandle" class="resize-handle"></div>
 </div>
 
-    <canvas class="canvas" id="canvasInterface" style="z-index:35"> </canvas>
-    <canvas class="canvas" id="canvasDebug" style="z-index:34"> </canvas>
-    <canvas class="canvas" id="canvasFPS" style="z-index:34"> </canvas>
+    <canvas class="canvas" id="canvasInterface" style="z-index:37"> </canvas>
+    <canvas class="canvas" id="canvasDebug" style="z-index:36"> </canvas>
+    <canvas class="canvas" id="canvasFPS" style="z-index:36"> </canvas>
     
-    <canvas class="canvas" id="canvasConfirm" style="z-index:34"> </canvas>
+    <canvas class="canvas" id="canvasConfirm" style="z-index:36"> </canvas>
     
-    <canvas class="canvas" id="canvasTutHeader" style="z-index:34"> </canvas>
-    <canvas class="canvas" id="canvasTutBase" style="z-index:33"> </canvas>
-    <canvas class="canvas" id="canvasTutExtra" style="z-index:32"> </canvas>
-    <canvas class="canvas" id="canvasTutControls" style="z-index:32"> </canvas>
-    <canvas class="canvas" id="canvasTutEffects" style="z-index:31"> </canvas>
-    <canvas class="canvas" id="canvasTutGates" style="z-index:30"> </canvas>
+    <!--     #tutorialtexture=36 -->
+    <canvas class="canvas" id="canvasTutHeader" style="z-index:35"> </canvas>
+    <canvas class="canvas" id="canvasTutBase" style="z-index:34"> </canvas>
+    <canvas class="canvas" id="canvasTutExtra" style="z-index:33"> </canvas>
+    <canvas class="canvas" id="canvasTutControls" style="z-index:33"> </canvas>
+    <canvas class="canvas" id="canvasTutEffects" style="z-index:32"> </canvas>
+    <canvas class="canvas" id="canvasTutGates" style="z-index:31"> </canvas>
     
-    <canvas class="canvas" id="canvasRobButton" style="z-index:32"> </canvas>
-    <canvas class="canvas" id="canvasRobText" style="z-index:32"> </canvas>
-    <canvas class="canvas" id="canvasRobScreenBase" style="z-index:32"> </canvas>
-    <canvas class="canvas" id="canvasRobScreen" style="z-index:31"> </canvas>
-    <canvas class="canvas" id="canvasRobBase" style="z-index:30"> </canvas>
+    <!--     #robottextures=34 -->
+    <canvas class="canvas" id="canvasRobButton" style="z-index:33"> </canvas>
+    <canvas class="canvas" id="canvasRobText" style="z-index:33"> </canvas>
+    <canvas class="canvas" id="canvasRobScreenBase" style="z-index:33"> </canvas>
+    <canvas class="canvas" id="canvasRobScreen" style="z-index:32"> </canvas>
+    <canvas class="canvas" id="canvasRobBase" style="z-index:31"> </canvas>
     <!--     #svgtutorial=29 -->
     <!--     #svggrey=28 -->
     
@@ -330,10 +337,12 @@
     <canvas class="canvas" id="canvasOverlayBottom" style="z-index:23"> </canvas>
     <canvas class="canvas" id="canvasVictoryText" style="z-index:26"> </canvas>
     <canvas class="canvas" id="canvasVictoryBase" style="z-index:25"> </canvas>
-    <canvas class="canvas" id="canvasMenu2" style="z-index:20"> </canvas>
+    <canvas class="canvas" id="canvasMenu2" style="z-index:21"> </canvas>
+    <!--     #analyzertextures=20 -->
     <canvas class="canvas" id="canvasAnalysisOverlay" style="z-index:19"> </canvas>
     <canvas class="canvas" id="canvasAnalysis" style="z-index:18"> </canvas>
-    <!--     #svganalysis=15 -->
+    <!--     #svganalysis=17 -->
+    <!--     #menutextures=16 -->
     <canvas class="canvas" id="canvasScenarioMask" style="z-index:15"> </canvas>
     <canvas class="canvas" id="canvasArchive" style="z-index:14"> </canvas>
     <canvas class="canvas" id="canvasJournal" style="z-index:14"> </canvas>
@@ -356,8 +365,8 @@
     <canvas class="canvas" id="canvasSelectBase" style="z-index:6"> </canvas>
     
     <canvas class="canvas" id="canvasTitleLearn" style="z-index:26"> </canvas>
-    <canvas class="canvas" id="canvasTitleText" style="z-index:10"> </canvas>
-    <canvas class="canvas" id="canvasTitleAbout" style="z-index:9"> </canvas>
+    <canvas class="canvas" id="canvasTitleText" style="z-index:11"> </canvas>
+    <canvas class="canvas" id="canvasTitleAbout" style="z-index:10"> </canvas>
     <canvas class="canvas" id="canvasTitle" style="z-index:8"> </canvas>
     <canvas class="canvas" id="canvasUnderlay" style="z-index:7"> </canvas>
     <canvas class="canvas" id="canvasEffects" style="z-index:6"> </canvas>
@@ -366,6 +375,26 @@
     <!--     #backtexture=1 -->
     
     <div id="greyoverlay"></div>
+
+    <!-- textures -->
+    <div id="tiledsectionA"></div> <!-- #main - factory -->
+    <div id="tiledsectionB"></div> <!-- #main - factory -->
+    <div id="tiledsectionC"></div> <!-- #main - menu -->
+    <div id="tiledsectionD"></div> <!-- #main - menu -->
+    <div id="tiledsectionE"></div> <!-- #main - brief -->
+    <div id="tiledsectionF"></div> <!-- #main - brief -->
+    <div id="tiledsectionG"></div> <!-- #handbook -->
+    <div id="tiledsectionH"></div> <!-- #handbook -->
+    <div id="tiledsectionI"></div> <!-- #select -->
+    <div id="tiledsectionJ"></div> <!-- #select -->
+    <div id="tiledsectionK"></div> <!-- #select -->
+    <div id="tiledsectionL"></div> <!-- #analyzer -->
+    <div id="tiledsectionM"></div> <!-- #analyzer -->
+    <div id="tiledsectionN"></div> <!-- #robot -->
+    <div id="tiledsectionO"></div> <!-- #robot -->
+    <div id="tiledsectionP"></div> <!-- #robot -->
+    <div id="tiledsectionQ"></div> <!-- #robot -->
+    <div id="tiledsectionR"></div> <!-- #title -->
 
     <script src="scripts.min.js"></script>
     <!-- <script src="scripts/PopWindow.js"></script>
